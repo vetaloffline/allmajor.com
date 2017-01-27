@@ -59,4 +59,9 @@ class Controller_product extends Controller
 		}
 		$this->view->generate('product_consumption_view2.php', 'template_view.php',$push);
 	}
+
+	function action_listgoods(){
+		$data = $this->model->getlistgood();
+		$this->view->generate('product_listgoods_view.php', 'template_view.php',$data);
+	}
 }	

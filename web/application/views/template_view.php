@@ -15,7 +15,7 @@
     <div class="col-sm-3 sidenav">
       <a href="/"><h4>База Данных AllMajor</h4></a>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#section1">Список всех товаров</a></li>
+        <li class="active"><a href="/listgoods">Список операций</a></li>
         <li><a href="/product/add">Добавить новый товар</a></li>
         <li><a href="/product/del">Удалить позицию</a></li>
         <li><a href="/product/arrival">Товар приход</a></li>

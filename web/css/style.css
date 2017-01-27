@@ -32,3 +32,10 @@
 .good_3{
   width: 200px;
 }
+.formlist{
+  text-align: center;
+}
+.listdel{
+  border: 5px solid;
+  width: 30px;
+}

@@ -128,11 +128,27 @@ class Model_product extends Model{
 				  WHERE good_id = '".$idgood."'";
 		$good = $this->db->makeQuery($query)[0];
 		
-
 		$query = "INSERT INTO `allmajorgistory`(`good_id`, `name`, `price`, `quantity`, `puchasePrice`, `operation`, `data`, `summa`) VALUES ('".$idgood."','".$good['name']."','".$price."','".$quantity."','".$puchprice."','consumption','".$data."','".$summa."')";
 		$this->db->makeQuery($query);
+		
+		$query = "SELECT `quantity` 
+				  FROM `allmajorgoods` 
+				  WHERE good_id = '$idgood'";
 
+		$suma = $this->db->makeQuery($query)[0]['quantity'];
+		$difference = $suma - $quantity;
+		$query = "UPDATE `allmajorgoods` 
+				  SET `quantity`='$difference'
+				  WHERE good_id = '$idgood'";
 
+		if ($this->db->makeQuery($query)) {
+			return 1;
+		}else{return 2;}
+	}
+
+	function getlistgood(){
+		$query = "SELECT * FROM `allmajorgistory`";
+		return $this->db->makeQuery($query);
 	}
 }
 ?>
